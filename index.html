@@ -6,10 +6,17 @@
 <h1>Hello World</h1>
 <p>This site is under development. 
 We will get back to you soon</p>
+<div id="time"></div>
 <script>
-var d = new Date();
-var n = d.toLocaleTimeString();
-alert("The time is: \n"+n);
+function startTime() {
+  var d = new Date();
+  var n = d.toLocaleTimeString();
+  document.getElementById('time').innerHTML = n;
+  t = setTimeout(function() {
+    startTime()
+  }, 500);
+}
+startTime();
 </script>
 </body>
 </html>
